@@ -1,0 +1,16 @@
+.actionBarContainer {
+    width: 100%;
+    margin-top: 1%;
+}
+
+.actionBarContainer span {
+    color: rgb(0, 188, 212);
+    font-size: larger;
+    font-style: oblique;
+    font-family: sans-serif;
+}
+
+.actionBarContainer hr {
+    border-color: rgb(0, 188, 212);
+    border-top: hidden;
+}
