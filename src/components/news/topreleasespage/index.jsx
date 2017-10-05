@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SideMenu from 'components/sidemenu'
 import styles from './style.css'
+import Content from './Content'
+import tilesData from '../topreleases/tilesData'
 
 class TopReleasesPage extends Component {
     constructor (props) {
@@ -18,12 +20,17 @@ class TopReleasesPage extends Component {
 
     render () {
         return (
-            <div className={styles.sideMenu}>           
-                <SideMenu 
-                    open
-                    menuItems={this.state.menuItems}
-                    onClickMenuItem={this.onClickMenuItem}
-                />
+            <div className={styles.topContainer}>
+                <div className={styles.sideMenu}>           
+                    <SideMenu 
+                        open
+                        menuItems={this.state.menuItems}
+                        onClickMenuItem={this.onClickMenuItem}
+                    />
+                </div>
+                <div className={styles.contentContainer}>
+                    <Content tilesData={tilesData}/>
+                </div>
             </div>
         )
     }

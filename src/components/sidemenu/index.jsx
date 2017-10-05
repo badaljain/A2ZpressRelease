@@ -7,7 +7,7 @@ const menuItem = []
 
 const style = {
     'overflowY': 'auto',
-    'height': '100vh'
+    'height': '85vh'
 }
 
 const SideMenu = (props) => {
