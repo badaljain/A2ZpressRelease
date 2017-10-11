@@ -1,0 +1,56 @@
+.sideMenu {
+    float: left;
+    width: 20em;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.topContainer {
+    height: 85vh;
+}
+
+.contentContainer {
+    float: right;
+    width: 52em;
+    margin-bottom: 50px;
+    margin-top: 60px;
+    height: 85vh;
+    overflow-y: auto;
+}
+
+.contentDiv {
+    position: relative;
+    width: 51em;
+    height: 20em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.newsCategory {
+    font-size: medium;
+    margin: 2%;
+}
+
+.content img{
+    float: left;
+    width: 20%;
+    margin-left: 2%;
+}
+
+.content p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: small;
+    margin-left: 25%;
+    margin-right: 2%;
+}
+
+.dateDiv {
+    float: right;
+    margin: 2%;
+    margin-top: 6%;
+    font-size: smaller;
+}

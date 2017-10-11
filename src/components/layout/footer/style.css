@@ -1,0 +1,17 @@
+.footer {
+    height: 50px;
+    background-color: #212121;
+    color: rgb(0, 188, 212);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.footer > .title {
+    padding: 1%;
+    text-align: center;
+}
+
+.icons {
+    float: right;
+}
