@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchTopReleases } from '../newsActions'
+
 import SideMenu from 'components/sidemenu'
 import styles from './style.css'
 import Content from './Content'
@@ -10,8 +13,14 @@ class TopReleasesPage extends Component {
 
         this.state = {
             open: true,
-            menuItems: ['Item 1', 'Item 2','Item 1', 'Item 1', 'Item 2','Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2']
+            menuItems: ['Item 1', 'Item 2','Item 1', 'Item 1', 'Item 2','Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2'],
+            tilesData: []
         }
+    }
+
+    componentDidMount () {
+        debugger
+        this.props.fetchTopReleases()
     }
     
     onClickMenuItem = (selectedItem) => {
@@ -36,4 +45,16 @@ class TopReleasesPage extends Component {
     }
 }
 
-export default TopReleasesPage
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchTopReleases: () => dispatch(fetchTopReleases())
+    }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )( TopReleasesPage )

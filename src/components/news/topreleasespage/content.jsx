@@ -6,7 +6,7 @@ const Content = (props) => {
     
     props.tilesData.forEach((tile, i) => {
         contentList.push(
-            <div className={styles.contentDiv}>
+            <div className={styles.contentDiv} key={i}>
                 <div className={styles.newsCategory}> {tile.category} </div>
                     <div className={styles.content}>
                         <img src={tile.img} />

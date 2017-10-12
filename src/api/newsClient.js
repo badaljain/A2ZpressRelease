@@ -8,7 +8,8 @@ class NewsClient extends BaseFetcher {
     }
     
     async getTopReleases () {
-       return await this.execute(`${NEWS_ENDPOINT}/topreleases`, 'GET')
+        debugger
+        return await this.execute(`${NEWS_ENDPOINT}/topreleases`, 'GET')
     }
 }
 

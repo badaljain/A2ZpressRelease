@@ -9,6 +9,7 @@ export const getTopReleases = () => {
 
 export const fetchTopReleases = () => {
     return dispatch => {
-        newsClient.getTopReleases()
+        dispatch(getTopReleases())
+        return newsClient.getTopReleases()
     }
 }

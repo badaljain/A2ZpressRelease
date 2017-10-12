@@ -8,12 +8,8 @@ const identity = (x) => x
 const BASE_ENDPOINT = '/api'
 
 class BaseFetcher {
-    this.config = {
-        base: BASE_ENDPOINT
-    }
 
     constructor (client, config) {
-        config.base && this.config.base = config.base
     }
 
     execute = (resourceEndpoint, method = 'GET', body = {}) => {
@@ -23,7 +19,7 @@ class BaseFetcher {
         if (method !== 'GET') {
             requestParams = { ...postOptions, body: JSON.stringify(body) }
         }
-        
+
         return fetch(fetchUrl, requestParams).then(parseResponse).then(identity)
     }
 }
