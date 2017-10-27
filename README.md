@@ -3,6 +3,9 @@
 Pre-req:
   yarn
 Steps to Run:
-  git pull https://github.com/badaljain/A2ZpressRelease.git
-  yarn install
-  yarn start
+1. git pull https://github.com/badaljain/A2ZpressRelease.git
+2. yarn install
+3. yarn start
+
+Note: you need to clone the repo A2ZServer for serving api requests from A2ZpressRelease client.
+A2ZServer: https://github.com/badaljain/A2ZServer
