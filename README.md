@@ -9,4 +9,4 @@ Steps to Run:
 3. yarn start
 
 Note: you need to clone the repo A2ZServer for serving api requests from A2ZpressRelease client.
-A2ZServer: https://github.com/badaljain/A2ZServer
+https://github.com/badaljain/A2ZServer
