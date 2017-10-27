@@ -1,7 +1,8 @@
 # A2ZpressRelease
 
 Pre-req:
-  yarn
+yarn
+
 Steps to Run:
 1. git pull https://github.com/badaljain/A2ZpressRelease.git
 2. yarn install
