@@ -29,7 +29,7 @@ class ThreeTileGrid extends Component {
                                   title={news.title}
                                   className={styles.titleStyle}
                                   subtitle={<span>by <b>{news.author}</b></span>}
-                                  actionIcon={<IconButton><StarBorder color='white' /></IconButton>}
+                                  actionIcon={<IconButton><StarBorder color='#212121' /></IconButton>}
                                   titleBackground='bottom'
                                 >
                                     <div>

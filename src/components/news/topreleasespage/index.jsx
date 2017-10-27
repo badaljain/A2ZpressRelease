@@ -3,9 +3,13 @@ import { connect } from 'react-redux'
 import { fetchTopReleases } from '../newsActions'
 
 import SideMenu from 'components/sidemenu'
+import classNames from 'classnames'
+
 import styles from './style.css'
 import Content from './Content'
 import tilesData from '../topreleases/tilesData'
+import CommonStyles from 'components/common/style.css'
+
 
 class TopReleasesPage extends Component {
     constructor (props) {
@@ -13,32 +17,43 @@ class TopReleasesPage extends Component {
 
         this.state = {
             open: true,
-            menuItems: ['Item 1', 'Item 2','Item 1', 'Item 1', 'Item 2','Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2', 'Item 1', 'Item 2'],
             tilesData: []
         }
     }
 
     componentDidMount () {
-        debugger
         this.props.fetchTopReleases()
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({
+            tilesData: nextProps.tilesData,
+            showLoader: nextProps.showLoader
+        })
     }
     
     onClickMenuItem = (selectedItem) => {
-        alert (selectedItem)
+        let { tilesData } = this.state
+        const item = tilesData.find(item => item.id == selectedItem)
+        tilesData.splice(tilesData.indexOf(item), 1)
+        tilesData.unshift(item)
+        this.setState({ tilesData })
     }
 
     render () {
+        const topContainerClass = classNames(styles.topContainer, CommonStyles.container)
+
         return (
-            <div className={styles.topContainer}>
+            <div className={topContainerClass}>
                 <div className={styles.sideMenu}>           
                     <SideMenu 
                         open
-                        menuItems={this.state.menuItems}
+                        menuItems={this.state.tilesData}
                         onClickMenuItem={this.onClickMenuItem}
                     />
                 </div>
                 <div className={styles.contentContainer}>
-                    <Content tilesData={tilesData}/>
+                    <Content tilesData={this.state.tilesData}/>
                 </div>
             </div>
         )
@@ -47,7 +62,7 @@ class TopReleasesPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        tilesData: state.NewsReducer.topReleases
     }
 }
 

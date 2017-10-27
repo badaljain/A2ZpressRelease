@@ -49,7 +49,6 @@ class ContactUs extends Component {
 
         return (
             <div>
-                <RaisedButton label='Scrollable Dialog' onClick={this.props.handleOpen} />
                 <Dialog
                     title='Contact Us'
                     actions={actions}

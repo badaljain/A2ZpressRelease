@@ -7,9 +7,18 @@ export const getTopReleases = () => {
     }
 }
 
+export const receivedTopReleases = (topReleases) => {
+    return {
+        type: 'RECEIVE_TOP_RELEASES',
+        topReleases
+    }
+}
+
 export const fetchTopReleases = () => {
     return dispatch => {
         dispatch(getTopReleases())
-        return newsClient.getTopReleases()
+        return newsClient.getTopReleases().then(
+            response => dispatch(receivedTopReleases(response.json))
+        )
     }
 }

@@ -9,7 +9,6 @@
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto;
-    margin-top: 1em !important;
 }
 
 .titleStyle {

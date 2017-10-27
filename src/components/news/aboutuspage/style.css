@@ -18,4 +18,5 @@
 .newsLetter {
     margin-top: 1em;
     height: 4em;
+    display: none;
 }

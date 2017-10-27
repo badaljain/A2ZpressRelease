@@ -3,5 +3,9 @@ body {
 }
 
 .appBar {
-    position: fixed !important;
+    box-shadow: none !important;
+}
+
+.navBarBgColor {
+    background-color: rgb(0, 188, 212)
 }

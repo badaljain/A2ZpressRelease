@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './style.css'
 
-const contentList = []
 const Content = (props) => {
-    
+    const contentList = []    
     props.tilesData.forEach((tile, i) => {
+        const key = `${tile.title}${i}`
         contentList.push(
-            <div className={styles.contentDiv} key={i}>
-                <div className={styles.newsCategory}> {tile.category} </div>
+            <div className={styles.contentDiv} key={key}>
+                <div className={styles.newsCategory}> {tile.title} </div>
                     <div className={styles.content}>
                         <img src={tile.img} />
                         <p> {tile.content} </p> 

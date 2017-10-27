@@ -5,7 +5,7 @@ const maybeJSON = (x) => x.json().catch(e => Promise.resolve(JSON.stringify({}))
 const parseResponse = (response) => maybeJSON(response).then(json => ({ rawResponse: response, json }))
 const identity = (x) => x
 
-const BASE_ENDPOINT = '/api'
+const BASE_ENDPOINT = 'http://localhost:3001'
 
 class BaseFetcher {
 

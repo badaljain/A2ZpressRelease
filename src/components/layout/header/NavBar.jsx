@@ -5,7 +5,9 @@ import { ToolbarGroup } from 'material-ui/Toolbar'
 import { withRouter } from 'react-router-dom'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
+import classNames from 'classnames'
 import styles from './style.css'
+import commonStyles from 'components/common/style.css'
 import ContactUs from 'components/contactus'
 
 class NavBar extends Component {
@@ -35,11 +37,13 @@ class NavBar extends Component {
     }
 
     render() {
+        
+        const appBarClass = classNames(styles.appBar, commonStyles.container)
 
         return (
-            <div>
+            <div className={styles.navBarBgColor}>
                 <AppBar
-                    title='A2Z Press Release'
+                    title='Bads Press Release'
                     iconElementRight={
                         <div>
                             <FlatButton label='Home' onClick={() => this.navigateTo('/home')} />
@@ -60,7 +64,7 @@ class NavBar extends Component {
                             <FlatButton label='Contact Us' onClick={this.handleContactOpen} />
                         </div>
                     }
-                    className={styles.appBar}
+                    className={appBarClass}
                 / >
                 <ContactUs 
                     open={this.state.openContactDialog}

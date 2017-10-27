@@ -4,8 +4,14 @@ const NewsReducer = (state = {}, action) => {
         case 'GET_TOP_RELEASES':
             return {
                 ...state,
-                topReleases: action.topReleases
+                showLoader: true
             }
+        case 'RECEIVE_TOP_RELEASES':
+            return {
+                ...state,
+                topReleases: action.topReleases,
+                showLoader: false
+            }   
 
         default:
             return state
