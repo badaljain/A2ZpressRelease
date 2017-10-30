@@ -16,9 +16,14 @@ class TopReleasesPage extends Component {
         super(props)
 
         this.state = {
+            oldTitle: document.title,
             open: true,
             tilesData: []
         }
+    }
+    
+    componentWillMount () {
+        document.title = `Top Releases | ${this.state.oldTitle}`
     }
 
     componentDidMount () {
@@ -30,6 +35,10 @@ class TopReleasesPage extends Component {
             tilesData: nextProps.tilesData,
             showLoader: nextProps.showLoader
         })
+    }
+
+    componentWillUnmount () {
+        document.title = this.state.oldTitle
     }
     
     onClickMenuItem = (selectedItem) => {
